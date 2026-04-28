@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import { cn } from "@/lib/utils";
+import { Toaster } from "@/components/ui/toaster";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
@@ -41,8 +42,9 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={cn(inter.variable)}>
-      <body className="font-sans antialiased min-h-screen bg-background text-foreground">
+      <body className="font-sans antialiased min-h-screen bg-background text-foreground pt-safe pb-safe pl-safe pr-safe">
         {children}
+        <Toaster />
       </body>
     </html>
   );
